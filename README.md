@@ -1,1 +1,0 @@
-# HiggsDNA-CMSDAS-2025

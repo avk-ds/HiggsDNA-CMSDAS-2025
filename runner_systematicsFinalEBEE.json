@@ -1,0 +1,36 @@
+{
+    "samplejson": "/eos/home-a/avdas/higgsdna_finalfits_tutorial_24/assignments/all_data_v1.json",
+    "workflow": "base",
+    "metaconditions": "Era2022_v1",
+    "taggers": [],
+    "year": {
+        "ggh": ["2022postEE"],
+        "vbf": ["2022postEE"],
+        "vh": ["2022postEE"],
+        "tth": ["2022postEE"],
+        "GG-Box": ["2022postEE"],
+        "ppGJetLowPt": ["2022postEE"],
+        "ppGJetHighPt": ["2022postEE"],
+        "EGammaE_data": ["2022postEE"]
+    },
+    "corrections": {
+        "ggh": ["Smearing_Trad", "Material", "FNUF","Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "vbf": ["Smearing_Trad", "Material", "FNUF","Pileup", "SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "vh": ["Smearing_Trad", "Material","FNUF","Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "tth": ["Smearing_Trad", "Material","FNUF","Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "GG-Box": ["Smearing_Trad", "Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "ppGJetLowPt": ["Smearing_Trad", "Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "ppGJetHighPt": ["Smearing_Trad", "Pileup","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF"],
+        "EGammaE_data": ["ScaleEE_Trad", "ScaleEB_Trad"]
+    },
+    "systematics": {
+        "ggh": ["Smearing_Trad", "Material", "Pileup","FNUF","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF", "ScaleEB_Trad", "ScaleEE_Trad"],
+        "vbf": ["Smearing_Trad", "Material", "Pileup","FNUF","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF", "ScaleEB_Trad", "ScaleEE_Trad"],
+        "vh": ["Smearing_Trad", "Material", "Pileup","FNUF","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF", "ScaleEB_Trad", "ScaleEE_Trad"],
+        "tth": ["Smearing_Trad", "Material", "Pileup","FNUF","SF_Photon_ID","ElectronVetoSF", "TriggerSF", "PreselSF","ScaleEB_Trad", "ScaleEE_Trad"],
+        "GG-Box": [],
+        "ppGJetLowPt": [],
+        "ppGJetHighPt": [],
+        "EGammaE_data": []
+    }
+}

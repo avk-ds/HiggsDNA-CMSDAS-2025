@@ -64,7 +64,7 @@ python3 <path_to_post_processing_folder>/prepare_output_file.py \
     --root \
     --syst \
     --cats \
-    --varDict var_dict3.json \
+    --varDict var_dict.json \
     --catDict eta_cats.json \
     --skip-normalisation
 ```
@@ -87,7 +87,7 @@ HiggsDNA-CMSDAS-2025/
 ├── runner_systematicsFinalEBEE.json  # Main analysis configuration
 ├── run_analysis.py               # Analysis runner script
 ├── prepare_output_file.py        # Post-processing script
-├── var_dict3.json               # Variable dictionary
+├── var_dict.json               # Variable dictionary
 ├── eta_cats.json                # Category definitions
 └── ...
 ```

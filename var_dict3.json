@@ -1,0 +1,13 @@
+{
+    "NOMINAL": "nominal",
+    "ScaleEBUp": "ScaleEB_Trad_up",
+    "ScaleEBDown": "ScaleEB_Trad_down",
+    "ScaleEEUp":"ScaleEE_Trad_up",
+    "ScaleEEDown":"ScaleEE_Trad_down",
+    "SmearingUp": "Smearing_Trad_up",
+    "SmearingDown": "Smearing_Trad_down",
+    "MaterialUp": "Material_up", 
+    "MaterialDown": "Material_down",
+    "FNUFUp": "FNUF_up", 
+    "FNUFDown": "FNUF_down"
+}

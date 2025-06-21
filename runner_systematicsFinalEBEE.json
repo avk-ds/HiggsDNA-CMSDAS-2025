@@ -1,5 +1,5 @@
 {
-    "samplejson": "/eos/home-a/avdas/higgsdna_finalfits_tutorial_24/assignments/samples.json",
+    "samplejson": "samples.json",
     "workflow": "base",
     "metaconditions": "Era2022_v1",
     "taggers": [],

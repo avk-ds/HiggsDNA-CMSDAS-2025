@@ -22,6 +22,9 @@ A comprehensive analysis framework for Higgs boson physics studies using CMS dat
    ```bash
    # Navigate to your desired installation directory (e.g., EOS)
    cd /path/to/your/installation/directory
+
+   #Give executable permissions
+   chmod +x higgs-dna-install.sh
    
    # Run the installation script
    ./higgs-dna-install.sh

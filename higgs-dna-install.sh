@@ -35,7 +35,7 @@ if [[ "$install_micromamba" == "y" || "$install_micromamba" == "Y" ]]; then
     read -p "$(echo -e "${BLUE}[INFO]${NC}Do you want to install micromamba in the current working directory: ${GREEN}$(pwd)${NC}(y/n): ")" install_here
     if [[ "$install_here" == "y" || "$install_here" == "Y" ]]; then
         echo -e "${BLUE}[INFO]${NC}Installing micromamba "
-        "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+        "${SHELL}" <(curl -L micro.mamba.pm/install.sh) -b "$(pwd)" -p "$(pwd)"
         echo -e "${GREEN}[CHECKPOINT]${NC}Micromamba installed successfully!$"
     else
         echo -e "${RED}[ERROR]${NC}Please copy this script to the directory where you want to install everything."

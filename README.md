@@ -1,44 +1,64 @@
-# HiggsDNA
+# HiggsDNA CMSDAS 2025
 
-A comprehensive analysis framework for Higgs boson physics studies using CMS data.
+A framework for Higgs boson analysis.
 
-## 🚀 Quick Start
 
-### Prerequisites
+## Installation
 
-- Python 3.x
-- Access to CMS computing environment (recommended: lxplus or similar)
-- Git
+### 1. Clone the Repository
 
-### Installation
+```bash
+git clone https://github.com/avk-ds/HiggsDNA-CMSDAS-2025
+cd HiggsDNA-CMSDAS-2025
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/avk-ds/HiggsDNA-CMSDAS-2025.git
-   cd HiggsDNA-CMSDAS-2025
-   ```
+### 2. Install Micromamba
 
-2. **Run the installation script**
-   ```bash
-   # Navigate to your desired installation directory (e.g., EOS)
-   cd /path/to/your/installation/directory
+Install micromamba on EOS using the following command:
 
-   #Give executable permissions
-   chmod +x higgs-dna-install.sh
-   
-   # Run the installation script
-   ./higgs-dna-install.sh
-   ```
+```bash
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
 
-## 📊 Usage
+**EOS Paths:**
+- Please mention the paths explicitly otherwise by deafult afs space would be used
+
+### 3. Set Up HiggsDNA Environment
+
+Make the installation script executable and run it:
+
+```bash
+chmod +x higgs-dna-installation
+./higgs-dna-installation
+```
+
+When prompted, press **`n`** to proceed.
+
+**If the installation fails**, manually create the environment:
+
+```bash
+micromamba env create -f environment.yml
+```
+
+### 4. Verify Installation
+
+To check if everything is working correctly:
+
+```bash
+./higgs-dna-installation
+```
+
+When prompted, press **`d`** to verify the installation.
+
+## Usage
 
 ### Configuration
 
-The analysis uses `runner_systematicsFinalEBEE.json` as the main configuration file for running HiggsDNA.
+The analysis uses the `runner_systematicsFinalEBEE.json` configuration file for running HiggsDNA.
 
 ### Creating Parquet Files
 
-Generate analysis parquet files without job submission:
+Run the analysis to create Parquet files (without job submission):
 
 ```bash
 python <path_to_the_file>/run_analysis.py \
@@ -51,14 +71,14 @@ python <path_to_the_file>/run_analysis.py \
 
 **Parameters:**
 - `--json-analysis`: Configuration file for the analysis
-- `--dump`: Output directory for the generated NTuples
-- `--executor`: Execution mode (futures for local processing)
-- `--triggerGroup`: Trigger selection pattern
-- `--nano-version`: NanoAOD version
+- `--dump`: Output directory for NTuples
+- `--executor futures`: Use futures executor for parallel processing
+- `--triggerGroup`: Regex pattern for trigger selection (DoubleEG triggers)
+- `--nano-version`: NanoAOD version to use
 
-### Post-Processing: Merge and Convert to ROOT
+### Merge and Convert to ROOT
 
-Convert and merge the parquet files to ROOT format:
+Convert the Parquet files to ROOT format and merge them:
 
 ```bash
 python3 <path_to_post_processing_folder>/prepare_output_file.py \
@@ -73,30 +93,32 @@ python3 <path_to_post_processing_folder>/prepare_output_file.py \
 ```
 
 **Parameters:**
-- `--input`: Input directory containing parquet files
+- `--input`: Input directory containing Parquet files
 - `--merge`: Merge multiple files
 - `--root`: Convert to ROOT format
 - `--syst`: Include systematic variations
 - `--cats`: Include category information
-- `--varDict`: Variable dictionary configuration
-- `--catDict`: Category dictionary configuration
-- `--skip-normalisation`: Skip normalization step
+- `--varDict`: Variable dictionary file
+- `--catDict`: Category dictionary file
+- `--skip-normalisation`: Skip the normalisation step
 
-## 📁 File Structure
+## File Structure
 
 ```
 HiggsDNA-CMSDAS-2025/
-├── higgs-dna-install.sh          # Installation script
-├── runner_systematicsFinalEBEE.json  # Main analysis configuration
-├── run_analysis.py               # Analysis runner script
-├── prepare_output_file.py        # Post-processing script
-├── var_dict.json               # Variable dictionary
-├── eta_cats.json                # Category definitions
-└── ...
+├── higgs-dna-installation          # Installation script
+├── environment.yml                 # Conda environment file
+├── runner_systematicsFinalEBEE.json # Analysis configuration
+├── var_dict.json                   # Variable dictionary
+├── eta_cats.json                   # Category dictionary
+├── run_analysis.py                 # Main analysis script
+└── prepare_output_file.py          # Post-processing script
 ```
 
-## 🔧 Configuration Files
+## Troubleshooting
 
-- **`runner_systematicsFinalEBEE.json`**: Main analysis configuration including systematic variations for ECAL Barrel and Endcap regions
-- **`var_dict.json`**: Systematic variations of some variables
-- **`eta_cats.json`**: Defines pseudorapidity-based categories
+### Installation Issues
+
+1. **Micromamba installation fails**: Ensure you have internet access and proper permissions on EOS
+2. **Environment creation fails**: Check that the `environment.yml` file is present and valid
+3. **Script permissions**: Use `chmod +x higgs-dna-installation` to make the script executable
